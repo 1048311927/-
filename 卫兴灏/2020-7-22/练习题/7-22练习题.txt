@@ -1,0 +1,95 @@
+1.JVM中将类加载器分为几种?多个类加载器之间是如何共同协作把我们编写的类加载到内存中去执行的？
+	1).启动类加载器  bootstrapClassLoader
+	2).扩展类加载器  ExtClassLoader
+	3).应用类加载器  AppClassLoader
+	这三个类加载器，使用双亲委托的方式，把一个class文件类加载到内存。
+	例如：要运行Hello.class文件中的类，首先加载任务就交给了AppClassLoader，然后AppClassLoader将这个任务委托给父加载器
+	ExtClassLoader，然后ExtClassLoader把这个任务交给自己的父加载器bootstrapClassLoader，之后bootstrapClassLoader试着去加载
+	这个类。在指定路径下没有找到，就将这个任务交给AppClassLoader，最后AppClassLoader从classpath中指定的路径中找到并加载Hello这个类，完成类的加载过程。
+	
+2.标识符的命名规则？
+	1）可以由字母、数字、下划线_、$符号组成
+	2）必须由字母、下划线、$符号开头
+	3）标识符大小写敏感 
+	4）标识符长度没有限制 但是不建议起太长。
+	5）不能使用Java中的关键字和保留字
+	6）使用驼峰命名法
+3.Java API中常用的包及作用：
+	java.lang:
+		Java中的基本包，其中包含的组件基本上全部用于启动或运行一个Java程序所需要的基本支持。
+		System和String都是lang包下的。
+	java.awt/javax.swing/java.awt.event:
+		awt和swing是Java中进行GUI编程的两套框架。
+		event（事件）包下的组件是用来做事件监听的。
+	java.io:
+		io：input output，输入和输出
+		io包都是和io流（输入流、输出流）相关的组件。
+	java.net:
+		net：网络
+		和网络编程相关的组件，例如ServerSocket、Socket
+	java.util:
+		util：工具
+		其中包含了很多常用的工具类或接口，
+		例如Scanner扫描器、Date时间、Java中的绝大多数集合框架中的组件
+		List Set Map Properties
+	java.sql:
+		包含的组件主要是用来和数据库进行交互。
+4..Java的基本数据类型和引用数据类型分别有哪几类，有几种，基本数据类型取值范围是多少，它们之间的区别是什么。
+			 整数型  
+			byte  8位  1字节
+			short  16位  2字节
+			int  32位  4字节
+			long  64位  8字节
+
+			浮点型
+			float  32位  4字节
+			double  64位  8字节
+
+			字符型
+			char  16位  2字节
+
+			布尔型
+			boolean  8位  1字节
+			文本数据类型
+			char  和  String  可以表示文本数据
+
+			char是基本的数据类型，最简单的数据类型
+
+			String是java中的类，类是java中复杂的数据类型
+
+			引用数据类型有：类类型、接口类型、数组类型
+
+			基本类型变量不能指向对象，引用类型变量可以指向对象。
+5.下列哪些语句是错误的？ ()
+
+　　int  x=120;　　
+　　byte  b=120;      
+　　b=x;         //这句是错误的，b  和  x  的数据类型不同，不能直接用x给b赋值；
+6.下列哪些语句是错误的？ (   )    并写出错误的理由
+
+　　float  x=12.0;        //错误，12.0默认为double类型    
+　　float  y=12;　　
+　　double  d=12;    
+　　y=d;　      //错误，y  和  d  的数据类型不同，不能直接用y赋值；
+7.下列三个语句的作用是等价的吗？(   是等价的，它们输出的结果都是a   )
+
+	char  c  =  'a';    
+	char  c  =  0x0061;      //设定"a"的十六进制数据的Unicode字符编码
+	char  c  =  97; 　    //设定"a"的十进制数据的Unicode字符编码
+8.已知[X]补＝10111010，求X（真值）___A___。
+	A.  －1000110											  
+	B.  1000100  				
+	C.  －1000101  			  
+	D.  1000110
+9.以下代码哪个可以通过编译？哪个会有问题?
+	1)short a = 10;
+		a = a + 1;    编译不通过   
+	2)short a = 10
+	    a += 1;     编译通过
+10.java中有几种注释方式？分别如何表示？
+	java中有三种注释方式：
+      //单行注释
+      /*      */多行注释
+      /**    */文档注释
+
+      单行注释和多行注释是java中的普通注释，而文档注释是java中一些比较特殊的注释。

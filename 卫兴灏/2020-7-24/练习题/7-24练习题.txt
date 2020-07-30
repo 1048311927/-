@@ -1,0 +1,82 @@
+1.实现两个int类型变量值的交换，要求不使用中间变量（写至少两种方法实现）
+	int a = 4,b=2;      
+	a = a^b;
+	b = a^b;
+	a = a^b;
+	
+	a = a + b;
+	b = a - b;
+	a = a - b;
+	
+2.下列语句的输出结果为
+  public  static  void  main(String[]  args)  {
+                int  m  =  5,  n  =  5;
+                if((m  !=  5)  &&  (n++  ==  5)){}  
+                System.out.println("a."  +  n);    5
+                  
+                m  =  n  =  5;
+                if((m  !=  5)  &  (n++  ==  6)){}
+                System.out.println("b."  +  n);     6
+                  
+                m  =  n  =  5;
+                if((m  ==  5)  ||  (n++  ==  5)){}
+                System.out.println("c."  +  n);   5
+                  
+                m  =  n  =  5;
+                if((m  ==  5)  |  (n++  ==  6)){}
+                System.out.println("d."  +  n);   6
+        }
+    
+3.计算程序输出结果:  
+				三目运算符	语法： 条件/布尔表达式 ? 值1 : 值2	
+							三目运算符表达式的结果是值1或值2中的一个。
+							如果满足条件，则返回值1，
+							如果不满足条件，则返回值2。
+public class ex3{
+        public  static  void  main(String[]  args){
+		int a=2;
+		int b=3;
+		int c=7;
+		int d=a>c?a:c   d=7
+		d=d>>2>b?d:b    0111>>2  0001  d=1>b?d:b;
+		System.out.println(d)； 3
+        
+        }
+}
+    A.    2          B.    3          C.    5	D.    7
+  
+4.计算下列式子的结果：
+3&2,3|2,-1^2,~4,~-128
+3&2:  011        &同1为1,有0则0
+	& 010
+	  010  = 2
+3|2:  011        |有1则1,同0则0
+    | 010
+	  011  = 3 
+-1^2: 10000001   ^相同为0,不同为1
+	^ 00000010
+	  10000011  = -3  
+~4:   00000100
+	~ 11111011  补
+	  10000101   =-5
+~-128 10000000 
+	~ 01111111  127
+	 
+5.下列代码输出结果
+	a. public void method(){
+			int a;
+			a++;
+			System.out.println(a);  //编译报错,a没有赋初始值
+	   }
+	b. public static void main(String[] args){
+			int a = 1;
+			int c = ++a;   //c = 2 ,a = 2
+			System.out.println(--c); //1
+			System.out.println(a--); //2   a= 1
+			System.out.println(a); //1
+		}
+	c.	public static void main(String[] args){
+			Student s = new Student("jack");
+			Student s2 = new Student("jack");
+			System.out.println(s == s2);  //false
+		}

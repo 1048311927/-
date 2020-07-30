@@ -1,0 +1,48 @@
+1. 某文件的权限为：d-rw-_r--_r--，用数值形式表示该权限  644  ,该文件属性解释为：   d是一个目录，U是6，G是4，O是4    。
+
+3．将前一个命令的标准输出作为后一个命令的标准输入，称之为  	管道    。 | 
+4．将/home/stud1/wang目录做归档压缩，压缩后生成wang.tar.gz文件，并将此文件保存到/home目录下，实现此任务的tar命令格式   tar czvf wang.tar.gz /home/stud1/wang                                           。
+	tar -命令(命令必有)-参数(-f必有) 接档案名
+	压缩
+	tar -czvf wang.tar.gz /home/stud1/wang 
+		-c: 建立压缩档案  -z:有gzip属性的
+		-v: 显示所有过程  -f:使用档案名字,切记，这个参数是最后一个参数，后面只能接档案名。
+	解压
+	tar -xzvf wang.tar.gz -C /home/stud1
+		-x:解压 -C:指定解压到
+
+5.可以用ls –al命令来观察文件的权限，每个文件的权限都用10位表示，并分为四段，其中第一段
+   占 1  位，表示 文件类型 ,第二段占  3   位 ，表示  拥有者    对该文件的权限。
+6. 编辑器vi中退出并且保存的命令分别是:   Wq    。
+7. Diff 命令用于比较两个文件内容的不同。
+8.rm命令可删除文件或目录，其主要差别就是     是否使用递归选项 –r 。
+9. 在linux系统中，ping 192.168.1.100命令行可以解释为   测试本机与主机192.168.1.100的连通性   。
+10. 链接分为___软链接     硬链接         _链接 。
+11.        mv    命令可以移动文件和目录，还可以为文件和目录重新命名。
+12. 用______>>_____符号将输出重定向内容附加在原文的后面。
+13. vi编辑器具有三种工作模式：              一般模式 、命令模式 、编辑模式 
+14. ___ping______命令用于测试网络的连通性
+15.若使用rmdir命令来删除某个已存在的目录，但操作无法成功，请说明可能的原因，以及解决的方法.
+		此目录可能不存在，或者目录不为空，或者目录中有隐含文件存在， 或者目录被设置了权限.
+		解决方法就是先修改权限，在使用rm –r   命令删除。
+
+
+
+16.在home目录下创建一个javacode目录,进入javacode目录; mkdir javacode
+				用一条命令 创建 src 和 bin 目录;	mkdir src bin
+				进入src目录,用一条命令创建com/briup/test目录,在test目录中vi编辑HelloWorld.java文件,内容为 					mkdir com/briup/test -p
+					package com.briup.test;
+
+						public class HelloWorld {
+
+							public static void main(String[] args) {
+								System.out.println("用java输出HelloWorld");
+
+							}
+
+					}
+				返回到javacode目录下,运行命令  javac src/com/briup/test/HelloWorld.java
+				再java -cp bin com.briup.test.HelloWorld
+				
+
+	
